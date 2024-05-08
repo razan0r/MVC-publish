@@ -1,0 +1,29 @@
+﻿@model List<Department>
+
+
+<a href="/Department/create" class="btn btn-outline-primary">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Details</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var department in Model)
+        {
+            <tr>
+                <th scope="row">@department.Id</th>
+                <td>@department.Name</td>
+                <td>
+                    <a href="Department/details/@department.Id" class="btn btn-outline-primary">Details</a>
+                    <a href="Department/delete/@department.Id" class="btn btn-outline-primary">Delete</a>
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
